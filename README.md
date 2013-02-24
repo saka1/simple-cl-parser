@@ -9,6 +9,10 @@ It has some features as follows:
 * A little fluent inteterface
 * POSIX compatible(incomplete)
 
+Requirements
+----------
+* TestNG (for unittest)
+
 Sample
 ----------
     SimpleCLParser parser = new SimpleCLParser();
