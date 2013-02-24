@@ -305,6 +305,12 @@ public class SimpleCLParser {
 	}
 
 	public String getUsage() {
-		return null; //TODO impl
+		StringBuilder sb = new StringBuilder("Usage: command");
+		for (Map.Entry<String, OPTION_NUM> e : this.optionNameSettingMap.entrySet()) {
+			String optionName = e.getKey();
+			sb.append(" [-").append(optionName).append("]");
+		}
+		sb.append(" operand");
+		return sb.toString();
 	}
 }

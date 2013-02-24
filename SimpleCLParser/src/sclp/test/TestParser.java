@@ -180,17 +180,15 @@ public class TestParser {
 		assertTrue(result.isParseSuccess());
 		assertEquals(result.getOptionArgumentList("a"), expected);
 	}
-/*
+
 	@Test
 	public void testGetUsage() {
 		SimpleCLParser parser = new SimpleCLParser();
 		parser.addOption("a").withArgumentList();
-		String expected =
-			"Usage: [-a]";
+		String expected = "Usage: command [-a] operand";
 
 		assertEquals(parser.getUsage(), expected);
 	}
-*/
 
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testIllegalAddOption() {
