@@ -74,6 +74,17 @@ public class TestParser {
 
 
 	@Test
+	public void testWithArgumentWithoutArgumnt() {
+		SimpleCLParser parser = new SimpleCLParser();
+		parser.addOption("a").withArgument();
+		CommandLine result = parser.parse("-a");
+
+		assertTrue(result.isParseSuccess());
+		assertTrue(result.hasOption("a"));
+		assertNull(result.getOptionArgument("a"));
+	}
+
+	@Test
 	public void testParseWithTwoOptionsAndArguments() {
 		SimpleCLParser parser = new SimpleCLParser();
 		parser.addOption("a").withArgument();
@@ -180,6 +191,12 @@ public class TestParser {
 		assertEquals(parser.getUsage(), expected);
 	}
 */
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testIllegalAddOption() {
+		SimpleCLParser parser = new SimpleCLParser();
+		parser.addOption("-a");
+	}
 
 	@Test
 	public void testDoubleHyphen() {

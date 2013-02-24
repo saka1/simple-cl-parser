@@ -267,6 +267,9 @@ public class SimpleCLParser {
 	}
 
 	public ParserQualifier addOption(String optionName) {
+		if (optionName.length() != 1) {
+			throw new IllegalArgumentException();
+		}
 		this.nowSettingOptionName = optionName;
 		this.optionNameSettingMap.put(optionName, OPTION_NUM.ZERO);
 		return new ParserQualifier(this);
