@@ -166,6 +166,18 @@ public class TestParser {
 		assertEquals(result.getOperand(), expected);
 	}
 
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testAddOptionWithEmptyArgument() {
+		SimpleCLParser parser = new SimpleCLParser();
+		parser.addOption("");
+	}
+
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public void testAddOptionWithNullArgument() {
+		SimpleCLParser parser = new SimpleCLParser();
+		parser.addOption(null);
+	}
+
 	@Test
 	public void testAddOptionWithArgumentList() {
 		SimpleCLParser parser = new SimpleCLParser();

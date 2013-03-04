@@ -267,8 +267,8 @@ public class SimpleCLParser {
 	}
 
 	public ParserQualifier addOption(String optionName) {
-		if (optionName.length() != 1) {
-			throw new IllegalArgumentException();
+		if (optionName == null || optionName.length() != 1) {
+			throw new IllegalArgumentException("optionName should be string including a character");
 		}
 		this.nowSettingOptionName = optionName;
 		this.optionNameSettingMap.put(optionName, OPTION_NUM.ZERO);
