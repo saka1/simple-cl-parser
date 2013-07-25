@@ -32,3 +32,7 @@ if (result.isParseSuccess()) {
 	System.out.println("Parse failed");
 }
 ```
+
+License
+----------
+MIT License
